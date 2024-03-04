@@ -11,6 +11,7 @@ export default {
     },
     colors: {
       "clr-White": "#f2f2f2",
+      "clr-black": "#333",
       "primary": "#44AFF2", 
       "secondary": "#F20F79",
       "third": "#F2913D",
