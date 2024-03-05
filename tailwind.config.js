@@ -17,6 +17,7 @@ export default {
       "third": "#F2913D",
       "primary-dark": "#138AF2", 
       "primary-light": "#04ADBF", 
+      "clr-blueExtra": "#6374ae",
     }
   },
   plugins: [],

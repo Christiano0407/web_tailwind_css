@@ -9,61 +9,60 @@
       {img: "../img/travel_five.jpg", title: "Trip, Travel & Dream", description:"Travel and Live your Dreams"},
     ]
 
-    const createHtmlStructure = (sliderSelector, images) => {
+    const createHtmlStructure = ( sliderSelector, images ) => {
 
-      const parent = document.querySelector(sliderSelector); 
-
-      // ====== Slides
-      images.forEach((slideImg, index) => {
-
-        const {img, title, description} = slideImg;
-
-        const sliderItem = `
-        <div class="item" style="background-image: url('${img}') data-attribute='${index}'>
-            <div class="content">
-             <div class="name">${title}</div>
-             <div class="description">${description}</div>
-             <button class="btn"> View More </button>
-            </div> 
-        </div>
-        `; 
-        // ===== Call Nodes and DOM Text 
-        const divFragment = document.createRange().createContextualFragment(sliderItem); 
-
-        parent.appendChild(divFragment);
-
-      });
-
-        // ===== Buttons Scroll 
-        const btnHtml = `
-          <div class="buttons">
-            <button class="prev">Prev</button>
-            <button class="after">After</button>
+      const parent = document.querySelector( sliderSelector );
+  
+      // Slides
+      images.forEach( ( slideImg, index ) => {
+        const { img, title, description } = slideImg;
+        const slideItem = `
+        <div
+          class="item"
+          style="background-image: url('${ img }')"
+          data-attribute="${ index }"
+        >
+          <div class="content">
+            <div class="name">${ title }</div>
+            <div class="description">${ description }</div>
+            <button>Ver más</button>
           </div>
+        </div>
         `;
-
-        const fragment = document.createRange().createContextualFragment(html);
-        parent.parentElement.appendChild(fragment);
-
-      };
-       
-        // ===== Initial Fragment Slider 
-        createHtmlStructure(".slider", slideImages);
-        
-        // ===== References DOM ($)
-        const $slider = document.querySelector(".slider");
-        const $prev = document.querySelector(".prev");
-        const $next = document.querySelector(".next");
-
-        // ==== Events & Listener 
-        $next.addEventListener("click", () => {
-          const items = document.querySelectorAll(".item"); 
-          $slider.appendChild(items[0]);
-        });
-
-        $prev.addEventListener("click", () => {
-          const items = document.querySelectorAll(".item");
-          $slider.appendChild(items[items.length -1]);
-        })
+        const divFragment = document.createRange().createContextualFragment( slideItem );
+        parent.appendChild( divFragment );
+      } );
+  
+      // Buttons
+      const html = `
+      <div class="buttons">
+        <button class="prev"> Prev</button>
+        <button class="next"> Next</button>
+      </div>
+      `;
+      const fragment = document.createRange().createContextualFragment( html );
+      parent.parentElement.appendChild( fragment );
+      
+    };
+  
+    // Initializations
+    createHtmlStructure( '.slider', slideImages );
+    
+    
+    // References
+    const $slider = document.querySelector( '.slider' );
+    const $next = document.querySelector( '.next' );
+    const $prev = document.querySelector( '.prev' );
+  
+    // Listeners
+    $next.addEventListener( 'click', () => {
+      const items = document.querySelectorAll( '.item' );
+      $slider.appendChild( items[ 0 ] );
+    } );
+  
+    $prev.addEventListener( 'click', () => {
+      const items = document.querySelectorAll( '.item' );
+      $slider.prepend( items[ items.length - 1 ] );
+    } );
 
    } )();
