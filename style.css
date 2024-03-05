@@ -78,21 +78,3 @@ hr {
 }
 
 /** ====== @Layer Components ====== */
-@layer components {
-  .overlay {
-    @apply absolute inset-0 bg-block opacity-50;
-  }
-  .item {
-    @apply bg-cover bg-center relative;
-  }
-  .content {
-    @apply absolute inset-0 flex flex-col justify-center items-center text-white;
-  }
-  .description {
-    @apply text-lg mb-4;
-  }
-
-  .buttons {
-    @apply bg-white text-black px-4 py-2 rounded; 
-  }
-}
