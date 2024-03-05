@@ -1,61 +1,79 @@
 //** ==== Travel Website ===== */
-( () => {
+(() => {
    
   const slideImages = [ 
-    {img: "../img/travel_one.jpg", title: "Trip & Dream", description:"Travel and Live your Dreams"},
-    {img: "../img/travel_two.jpg", title: "Think Travel & Dream", description:"Travel and Live your Dreams"},
-    {img: "../img/travel_three.jpg", title: "Travel & live", description:"Travel and Live your Dreams"},
-    {img: "../img/travel_four.jpg", title: "Live your Dreams", description:"Travel and Live your Dreams"},
-    {img: "../img/travel_five.jpg", title: "Trip, Travel & Dream", description:"Travel and Live your Dreams"},
+    {img: "./src/img/travel_one.jpg", title: "Trip & Dream", description:"Travel and Live your Dreams"},
+    {img: "./src/img/travel_two.jpg", title: "Think Travel & Dream", description:"Travel and Live your Dreams"},
+    {img: "./src/img/travel_three.jpg", title: "Travel & live", description:"Travel and Live your Dreams"},
+    {img: "./src/img/travel_four.jpg", title: "Live your Dreams", description:"Travel and Live your Dreams"},
+    {img: "./src/img/travel_five.jpg", title: "Trip, Travel & Dream", description:"Travel and Live your Dreams"},
   ]
 
-  const createHtmlStructure = ( sliderSelector, images ) => {
+  const createHtmlStructure = (sliderSelector, images) => {
 
-    const parent = document.querySelector( sliderSelector );
+    const parent = document.querySelector( sliderSelector, images );
 
     // Slides
-    images.forEach( ( slideImg, index ) => {
+    images.forEach((slideImg, index) => {
       const { img, title, description } = slideImg;
       const slideItem = `
-        <div class="item bg-cover bg-center relative" style="background-image: url('${ img }')" data-attribute="${ index }">
-          <div class="absolute inset-0 bg-black opacity-50"></div>
-          <div class="content absolute inset-0 flex flex-col justify-center items-center text-white">
-            <div class="name text-3xl font-bold mb-2">${ title }</div>
-            <div class="description text-lg mb-4">${ description }</div>
-            <button class="bg-white text-black px-4 py-2 rounded">Ver más</button>
-          </div>
+      <div
+        class="item"
+        style="background-image: url('${img}')"
+        data-attribute="${index}"
+      >
+        <div class="content">
+          <div class="name">${title}</div>
+          <div class="description">${description}</div>
+          <button>Ver más</button>
         </div>
+      </div>
       `;
-
-      const divFragment = document.createRange().createContextualFragment( slideItem );
-      parent.appendChild( divFragment );
-    } );
+      const divFragment = document.createRange().createContextualFragment(slideItem);
+      parent.appendChild(divFragment);
+    });
 
     // Buttons
-    const htmlBtn = document.querySelector("#idBtn"); 
-    const fragment = document.createRange().createContextualFragment(htmlBtn);
-    parent.parentElement.appendChild( fragment );
+    const html = `
+    <div class="buttons">
+      <button class="prev"> Prev</button>
+      <button class="next"> Next</button>
+    </div>
+    `;
+    const fragment = document.createRange().createContextualFragment(html);
+    parent.parentElement.appendChild(fragment);
     
   };
 
   // Initializations
-  const slider = document.querySelector('#idSlider' );
-  createHtmlStructure(slider, slideImages );
+  createHtmlStructure(".slider", slideImages);
   
   
   // References
-  const next = document.querySelector('#Next' );
-  const prev = document.querySelector('#Prev' );
+  const $slider = document.querySelector(".slider");
+  const $next = document.querySelector(".next");
+  const $prev = document.querySelector(".prev");
+  const $container = document.querySelector(".container");
 
   // Listeners
-  next.addEventListener( 'click', () => {
-    const items = document.querySelectorAll( '.item' );
-    slider.appendChild( items[ 0 ] );
-  } );
+  $next.addEventListener( 'click', () => {
+    const items = document.querySelectorAll(".item");
+    $slider.appendChild(items[0]);
+  });
 
-  prev.addEventListener( 'click', () => {
-    const items = document.querySelectorAll( '.item' );
-    slider.prepend( items[ items.length - 1 ] );
-  } );
+  $prev.addEventListener( 'click', () => {
+    const items = document.querySelectorAll(".item");
+    $slider.prepend(items[items.length - 1],items[0]);
+  });
 
- } )();
+  $slider.addEventListener('click', (e) => {
+    const items = document.querySelectorAll(".item");
+    const selectedItem = e.target.closest(".item");
+    if (selectedItem) {
+      items.forEach(item => item.classList.remove("selected"));
+      selectedItem.classList.add("selected");
+      $container.style.backgroundImage = `url('${selectedItem.style.backgroundImage.slice(5, -2)}')`;
+    }
+  });
+
+ })();
