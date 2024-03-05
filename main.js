@@ -32,35 +32,30 @@
     } );
 
     // Buttons
-    const html = `
-    <div class="bg-white text-black px-4 py-2 rounded">
-      <button class="prev"> Prev</button>
-      <button class="next"> Next</button>
-    </div>
-    `;
-    const fragment = document.createRange().createContextualFragment( html );
+    const htmlBtn = document.querySelector("#idBtn"); 
+    const fragment = document.createRange().createContextualFragment(htmlBtn);
     parent.parentElement.appendChild( fragment );
     
   };
 
   // Initializations
-  createHtmlStructure( '.slider', slideImages );
+  const slider = document.querySelector('#idSlider' );
+  createHtmlStructure(slider, slideImages );
   
   
   // References
-  const $slider = document.querySelector( '.slider' );
-  const $next = document.querySelector( '.next' );
-  const $prev = document.querySelector( '.prev' );
+  const next = document.querySelector('#Next' );
+  const prev = document.querySelector('#Prev' );
 
   // Listeners
-  $next.addEventListener( 'click', () => {
+  next.addEventListener( 'click', () => {
     const items = document.querySelectorAll( '.item' );
-    $slider.appendChild( items[ 0 ] );
+    slider.appendChild( items[ 0 ] );
   } );
 
-  $prev.addEventListener( 'click', () => {
+  prev.addEventListener( 'click', () => {
     const items = document.querySelectorAll( '.item' );
-    $slider.prepend( items[ items.length - 1 ] );
+    slider.prepend( items[ items.length - 1 ] );
   } );
 
  } )();

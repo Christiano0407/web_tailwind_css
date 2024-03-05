@@ -3,6 +3,14 @@
 @tailwind components;
 @tailwind utilities;
 
+/** ====== @Layer Components ====== */
+@layer base {
+  .div {
+    @apply w-full p-[20px] text-white;
+  }
+}
+
+
 /** === ROOT === */
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -76,5 +84,3 @@ hr {
     background-color: #ffffff;
   }
 }
-
-/** ====== @Layer Components ====== */
