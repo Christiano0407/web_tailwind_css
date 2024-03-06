@@ -1,11 +1,14 @@
 //** ==== Travel Website ===== */
+const main = document.querySelector("#idMain"); 
+
+
 (() => {
   const slideImages = [ 
-    {img: "./src/img/travel_one.jpg", title: "Trip & Dream", description:"Travel and Live your Dreams"},
-    {img: "./src/img/travel_two.jpg", title: "Think Travel & Dream", description:"Travel and Live your Dreams"},
-    {img: "./src/img/travel_three.jpg", title: "Travel & live", description:"Travel and Live your Dreams"},
-    {img: "./src/img/travel_four.jpg", title: "Live your Dreams", description:"Travel and Live your Dreams"},
-    {img: "./src/img/travel_five.jpg", title: "Trip, Travel & Dream", description:"Travel and Live your Dreams"},
+    {img: "./src/img/travel_one.jpg", title: "Trip & Dream", description:"Encuentra un lugar para ti y tu familia. Los socios ahorran 25% o más en hoteles seleccionados."},
+    {img: "./src/img/travel_two.jpg", title: "Think Travel & Dream", description:"Encuentra un lugar para ti y tu familia. Los socios ahorran 25% o más en hoteles seleccionados."},
+    {img: "./src/img/travel_three.jpg", title: "Travel & live", description:"Encuentra un lugar para ti y tu familia. Los socios ahorran 25% o más en hoteles seleccionados."},
+    {img: "./src/img/travel_four.jpg", title: "Live your Dreams", description:"Encuentra un lugar para ti y tu familia. Los socios ahorran 25% o más en hoteles seleccionados."},
+    {img: "./src/img/travel_five.jpg", title: "Trip, Travel & Dream", description:"Encuentra un lugar para ti y tu familia. Los socios ahorran 25% o más en hoteles seleccionados."},
   ]
 
   const createHtmlStructure = (sliderSelector, images) => {
@@ -17,14 +20,15 @@
       const { img, title, description } = slideImg;
       const slideItem = `
       <div
+        id="idItem"
         class="item"
         style="background-image: url('${img}')"
         data-attribute="${index}"
       >
-        <div class="content">
-          <div class="name">${title}</div>
-          <div class="description">${description}</div>
-          <button class="action">Explore</button>
+        <div id="idContent" class="content">
+          <div id="idName" class="name">${title}</div>
+          <div id="idDescription" class="description">${description}</div>
+          <button id="idAction" class="action">Explore</button>
         </div>
       </div>
       `;
