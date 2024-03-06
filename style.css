@@ -1,4 +1,5 @@
 /** ====== @Layer Components ====== */
+@import url("./src/css/mediaQueries.css");
 /** === ROOT === */
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -109,7 +110,6 @@ hr {
 .slider {
   position: absolute;
   bottom: 50%;
-  top: 50%;
   left: 50%;
 }
 

@@ -1,0 +1,20 @@
+/** ==== Media Queries ==== */
+/*! ==== Mobile */
+@media (width >= 320px) {}
+@media (width >= 375px) {}
+@media (width >= 425px) {}
+@media (width >= 640px) {}
+
+/*! ==== Tablet */
+@media (width <= 768px) {
+  .slider {
+    top: 50%;
+  }
+}
+
+/*! ==== Screen PC */
+@media (width <= 1024PX) {}
+@media (width <= 1280PX) {}
+
+/*! ==== Screen (aLL) */
+@media (width <= 1536PX) {}
