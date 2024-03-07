@@ -1,5 +1,5 @@
 /** ====== @Layer Components ====== */
-@import url("./src/css/mediaQueries.css");
+/* @import url("./src/css/mediaQueries.css"); */
 /** === ROOT === */
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -234,3 +234,122 @@ hr {
   background: #ababab;
   color: #fff;
 }
+
+/*! ==== Mobile */
+@media (max-width: 320px) {}
+@media (max-width: 375px) {
+  .item .content {
+    left: 30px;
+    width: 300px;
+    top: -250px;
+  }
+
+  .content .name {
+    font-size: 50px;
+    font-weight: 900;
+  }
+
+  .content .description {
+    font-size: 1.6rem;
+  }
+
+  .content button {
+    background: #44AFF2;
+    color: #f2f2f2;
+  }
+  
+  .slider {
+    left: 2%;
+    top: 80%;
+  }
+
+  .container .slider .item {
+    width: 15rem;
+    height: 10rem;
+  }
+
+}
+/* @media (max-width: 425px) {
+  .slider {
+    left: 2.5%;
+  }
+
+  .item .content {
+    width: 30rem;
+    left: 35px;
+    top: -200px;
+  }
+  .content .name {
+    font-size: 3.5rem;
+    font-weight: 700;
+  }
+  .content .description {
+    font-size: 1.4rem;
+  }
+
+ 
+} */
+@media (max-width: 640px) {
+  .item .content {
+    top: -150px;
+    left: -350px;
+  }
+  .slider .item:nth-child(1),
+  .slider .item:nth-child(2) {
+   width: 25rem;
+   height: 10rem;
+  }
+  .slider {
+    left: 60%;
+    bottom: 20%;
+  }
+  .container button {
+    background-color: #44AFF2;
+    color: #f2f2f2;
+  }
+}
+
+/*! ==== Tablet */
+@media (min-width:  768px) {
+  .slider {
+    top: 75%;
+  }
+  .item .content {
+    left: -350px; /* -50px- */
+    width: 35rem;
+    top: -20rem;
+    padding: 2rem;
+    /* border: 2px solid red; */
+  }
+  .container .slider .item {
+    width: 15rem;
+    height: 20rem;
+  }
+  .slider .item:nth-child(1),
+  .slider .item:nth-child(2) {
+    top: 0;
+    left: 0;
+  /*  transform: translate(0, 0);
+    border-radius: 5px; */
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+   }
+   .action {
+     background-color: #44AFF2;
+     color: #f2f2f2;
+   }
+   .container .description {
+    font-size: 1.4rem;
+    font-weight: 500;
+    filter: brightness(0.5);
+   }
+
+}
+
+/*! ==== Screen PC */
+@media (min-width: 1024px) {}
+@media (min-width: 1280px) {}
+
+/*! ==== Screen (aLL) */
+@media (min-width: 1536px) {}
