@@ -23,9 +23,10 @@ const main = document.querySelector("#idMain");
         id="idItem"
         class="item"
         style="background-image: url('${img}')"
-        data-attribute="${index}"
-      >
-        <div id="idContent" class="content">
+        data-attribute="${index}">
+
+        <div 
+          id="idContent" class="content">
           <div id="idName" class="name">${title}</div>
           <div id="idDescription" class="description">${description}</div>
           <button id="idAction" class="action">Explore</button>
@@ -48,7 +49,7 @@ const main = document.querySelector("#idMain");
     
   };
 
-  // Initializations
+  // - Initializations Slider & List Img -
   createHtmlStructure(".slider", slideImages);
   
   
