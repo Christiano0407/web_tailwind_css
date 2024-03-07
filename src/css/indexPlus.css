@@ -603,3 +603,70 @@ video {
 .w-full {
   width: 100%;
 }
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  min-width: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  min-height: 100dvh;
+}
+
+h1, h2, h3, h4 {
+  text-wrap: balance;
+}
+
+p {
+  -webkit-text-decoration: pretty;
+          text-decoration: pretty;
+}
+
+a {
+  text-decoration: none;
+}
+
+a img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+ul {
+  list-style: none;
+}
+
+p, span {
+  letter-spacing: 0.1rem;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+hr {
+  width: 100%;
+}
+
+display {
+  display: flex;
+}
+
+displayNone {
+  display: none;
+}
