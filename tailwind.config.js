@@ -2,7 +2,6 @@
 export default {
   content: [
     "./index.html",
-    "./src/html/home.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   mode: 'jit',
@@ -26,8 +25,4 @@ export default {
     }
   },
   plugins: [],
-  experimental: {
-    applyComplexClasses: true,
-    layerOrder: ['utilities', 'components', 'utilities'],
-  },
 }
