@@ -245,6 +245,16 @@ hr {
  transition: opacity 0.5s ease-in;
 }
 
+/** ==== Display ====*/
+display {
+  display: flex;
+}
+
+displayNone {
+  display: none;
+}
+
+/** ====== Media Queries ======*/
 /*! ==== Mobile */
 @media (max-width: 320px) {}
 @media (max-width: 375px) {
