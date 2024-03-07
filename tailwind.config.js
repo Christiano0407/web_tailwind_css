@@ -2,6 +2,7 @@
 export default {
   content: [
     "./index.html",
+    "./src/html/home.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   mode: 'jit',
