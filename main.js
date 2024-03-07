@@ -57,7 +57,7 @@ const main = document.querySelector("#idMain");
   const $next = document.querySelector(".next");
   const $prev = document.querySelector(".prev");
   const $container = document.querySelector(".container");
-  const $action = document.querySelector(".action");
+  const $actionBtn = document.querySelector(".action");
   //const items = document.querySelectorAll(".item");
   // Swipe Scroll (Táctil)
   let startX = 0; 
@@ -145,6 +145,15 @@ const main = document.querySelector("#idMain");
       selectedItem.classList.add("selected");
       $container.style.backgroundImage = `url('${selectedItem.style.backgroundImage.slice(5, -2)}')`;
     }
+  });
+
+  $actionBtn.addEventListener("click", (e) => {
+    document.body.classList.add("transition-display-out");
+
+    setTimeout(() => {
+      window.location.href = "./src/html/home.html";
+    }, 500 ); 
+
   });
 
  })();

@@ -235,6 +235,16 @@ hr {
   color: #fff;
 }
 
+/** === Transitions and Animations ==== */
+.transition-display-out {
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+}
+.transition-display {
+ opacity: 1;
+ transition: opacity 0.5s ease-in;
+}
+
 /*! ==== Mobile */
 @media (max-width: 320px) {}
 @media (max-width: 375px) {
